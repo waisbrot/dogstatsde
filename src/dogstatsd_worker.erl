@@ -118,7 +118,8 @@ metric_type_to_str(counter) -> "c";
 metric_type_to_str(gauge) -> "g";
 metric_type_to_str(histogram) -> "h";
 metric_type_to_str(timer) -> "ms";
-metric_type_to_str(set) -> "s".
+metric_type_to_str(set) -> "s";
+metric_type_to_str(distribution) -> "d".
 
 kv(K, V) when is_atom(K) ->
     kv(atom_to_list(K), V);
