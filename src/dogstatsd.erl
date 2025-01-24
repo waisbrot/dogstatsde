@@ -2,7 +2,7 @@
 
 -type metric_name() :: iodata().
 -type metric_value() :: number().
--type metric_type() :: counter | gauge | histogram | timer | set.
+-type metric_type() :: counter | gauge | histogram | timer | set | distribution.
 -type metric_sample_rate() :: number().
 -type metric_tags() :: map().
 
@@ -33,6 +33,7 @@
         ,timer/1, timer/2, timer/3, timer/4
         ,timing/1, timing/2, timing/3, timing/4
         ,set/1, set/2, set/3, set/4
+	,distribution/1, distribution/2, distribution/3, distribution/4
         ,event/1, event/2, event/3, event/4, event/5
         ]).
 
@@ -131,6 +132,15 @@ send(Data) ->
 ?MK_TYPE_2(set).
 ?MK_TYPE_3(set).
 ?MK_TYPE_4(set).
+
+?SPEC_TYPE_1(distribution).
+?SPEC_TYPE_2(distribution).
+?SPEC_TYPE_3(distribution).
+?SPEC_TYPE_4(distribution).
+?MK_TYPE_1(distribution).
+?MK_TYPE_2(distribution).
+?MK_TYPE_3(distribution).
+?MK_TYPE_4(distribution).
 
 -spec event(event_title()) -> ok.
 event(Title) -> event(Title, "").
